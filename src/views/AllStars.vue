@@ -3,6 +3,7 @@
     <header class="header">
       <img class="logo" src="../assets/logo.png" alt="" />
       <!-- <input type="text" /> -->
+      <input type="text " class="search-input">
     </header>
     <section class="gallery">
       <Star v-for="(star, index) in allStars" :key="index" :star="star" />

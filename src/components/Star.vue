@@ -1,12 +1,12 @@
 <template>
   <article id="star">
     <section @click="starInfo(star.name)" class="wrapper">
-      <h4>{{ star.name }}</h4>
+      <h3>{{ star.name }}</h3>
       <article class="description">
         <p>
-          gender<span class="character">{{ star.gender }}</span>
+         <b>gender</b> <span class="character"> {{ star.gender }}</span>
         </p>
-        <p>hieght<span class="character">{{ star.height }}</span></p>
+        <p><b>height</b> <span class="character">{{ star.height }} cm</span></p>
       </article>
     </section>
   </article>

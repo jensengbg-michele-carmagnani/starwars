@@ -2,132 +2,125 @@
 @import "./components";
 @import "./typography";
 
-#app{
-  height: 100vh;
+#app {
+  height: 100;
   width: 100vw;
   padding-top: 2rem;
   display: flex;
-  background-image: url('./assets/background2.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size:cover;
-        background-color: black;
+  background-image: url("./assets/backtround-big.jpg");
+  background-position: center;
+  background-repeat: no-repeat ;
+  background-size:100% 100%;
+  
 
   flex-direction: column;
   // background: rgba(218, 214, 214, 0.84) ;
-    #nav {
-      margin-left: 4rem;
-      a {
-        text-decoration: none;
-        font-size: 1.4rem;
-        color: rgb(134, 129, 62);
-        margin-right: 0.5rem;
-        &.router-link-exact-active {
-          font-weight: 700;
-          color: #ffffff;
-        }
+  #nav {
+    margin-left: 4rem;
+    a {
+      text-decoration: none;
+      font-size: 1.4rem;
+      color: rgb(134, 129, 62);
+      margin-right: 0.5rem;
+      &.router-link-exact-active {
+        font-weight: 700;
+        color: #ffffff;
       }
     }
-  
+  }
 }
-#home{
-    height: 100%;
-   display: flex;
-   align-items: center;
-  
-    
-    
-    .count{
-      padding-left:15rem;
-      justify-self: flex-start;
-   
-      
-      p{
-        text-align: start;
-      }
+#home {
+  height: 100%;
+  display: flex;
+  align-items: center;
 
+  .count {
+    padding-left: 15rem;
+    justify-self: flex-start;
+
+    .welcome {
+      font-size: 1.7rem;
+      font: bold;
+      text-align: start;
+      color: red;
     }
   }
-  #all-stars{
-    width: 100%;
-    height: 100%;
-    .header{
-      padding: 3rem;
-     text-align: center;
-     .logo{
-       height:100px;
-     }
-    }
-    .gallery{
-      display:grid;
-      grid-template-columns: repeat(4,1fr);
-      grid-template-rows: auto;
-      grid-gap:2rem;
-       
-      .wrapper{
-        min-width: 200px;
-        min-height: 200px;
-        justify-self: center;
-        display:flex;
-        justify-content:space-evenly;
-        align-items:center;
-        flex-direction: column;
-        background-color: rgb(238, 238, 83);
-        border-radius: 2rem;
-         cursor: pointer;
-       
-        &:hover{
-       
-        }
-        // background-image: url('./assets/star.png');
-        // background-position: center;
-        // background-repeat: no-repeat;
-        // background-size: contain;
-        // background-color: black;
-        
-     
-      }
- 
-    }
-    .browse{
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      
-      .arrow-left, .arrow-right{
-        cursor: pointer;
-      }
-     
-    }
-  }
-  #star-info{
-    height: 100%;
-    width: 100%;
+}
+#all-stars {
+  width: 100%;
+  height: 100%;
+  .header {
     display: flex;
-  
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-      .name{
-        padding: 4rem;
-      }
-      .personal-info{
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-        
-        
-      
-        .trait{
-          width: 300px;
-          background-color:rgba(95, 94, 94, 0.84);
-          border-radius: 2rem;
-            padding: 1rem;
-          .space{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-transform: capitalize;
-          }
-        }
-      }
+    padding: 3rem;
+    text-align: center;
+    .logo {
+      height: 100px;
+    }
+    .search-input {
+      margin-top: 2rem;
+      width: 60%;
+      height: 2rem;
+      padding: 1px;
+      font-size: 1.9rem;
+      border-width: 1px;
+      border-color: #f6ed14;
+      background-color: #ffffff;
+      color: #000000;
+      border-style: solid;
+      border-radius: 2px;
+      box-shadow: -1px -3px 10px rgba(224, 233, 0, 0.34);
+      text-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
+    }
+    .search-input:focus {
+      outline: none;
+    }
   }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 2rem;
+  }
+  .browse {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .arrow-left,
+    .arrow-right {
+      cursor: pointer;
+    }
+  }
+}
+#star-info {
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+  .name {
+    padding: 4rem;
+  }
+  .personal-info {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    .trait {
+      width: 300px;
+      background-color: rgba(95, 94, 94, 0.84);
+      border-radius: 2rem;
+      padding: 1rem;
+      .space {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

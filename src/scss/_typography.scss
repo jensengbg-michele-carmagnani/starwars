@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 
 * {
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", " sans-serif";
   margin: 0;
   padding: 0;
 }
@@ -24,8 +24,10 @@ h2 {
 h3 {
   margin: 0;
   padding: 0;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
+  color: rgb(11, 11, 184);
+text-shadow: -1px -4px 6px rgba(0,42,164,0.6);
 }
 
 h4 {
@@ -37,8 +39,11 @@ h4 {
 
 p {
   font-size: 1.2rem;
-  color: #ffffff;
+  color: #a40606;
   text-align: center;
+  text-transform: capitalize;
+  font-style: italic;
+
 }
 span{
   font-size: 2rem;
