@@ -1,0 +1,133 @@
+@import "./variables";
+@import "./components";
+@import "./typography";
+
+#app{
+  height: 100vh;
+  width: 100vw;
+  padding-top: 2rem;
+  display: flex;
+  background-image: url('./assets/background2.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-color: black;
+
+  flex-direction: column;
+  // background: rgba(218, 214, 214, 0.84) ;
+    #nav {
+      margin-left: 4rem;
+      a {
+        text-decoration: none;
+        font-size: 1.4rem;
+        color: rgb(134, 129, 62);
+        margin-right: 0.5rem;
+        &.router-link-exact-active {
+          font-weight: 700;
+          color: #ffffff;
+        }
+      }
+    }
+  
+}
+#home{
+    height: 100%;
+   display: flex;
+   align-items: center;
+  
+    
+    
+    .count{
+      padding-left:15rem;
+      justify-self: flex-start;
+   
+      
+      p{
+        text-align: start;
+      }
+
+    }
+  }
+  #all-stars{
+    width: 100%;
+    height: 100%;
+    .header{
+      padding: 3rem;
+     text-align: center;
+     .logo{
+       height:100px;
+     }
+    }
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-template-rows: auto;
+      grid-gap:2rem;
+       
+      .wrapper{
+        min-width: 200px;
+        min-height: 200px;
+        justify-self: center;
+        display:flex;
+        justify-content:space-evenly;
+        align-items:center;
+        flex-direction: column;
+        background-color: rgb(238, 238, 83);
+        border-radius: 2rem;
+         cursor: pointer;
+       
+        &:hover{
+       
+        }
+        // background-image: url('./assets/star.png');
+        // background-position: center;
+        // background-repeat: no-repeat;
+        // background-size: contain;
+        // background-color: black;
+        
+     
+      }
+ 
+    }
+    .browse{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      
+      .arrow-left, .arrow-right{
+        cursor: pointer;
+      }
+     
+    }
+  }
+  #star-info{
+    height: 100%;
+    width: 100%;
+    display: flex;
+  
+    align-items: center;
+    flex-direction: column;
+      .name{
+        padding: 4rem;
+      }
+      .personal-info{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        
+        
+      
+        .trait{
+          width: 300px;
+          background-color:rgba(95, 94, 94, 0.84);
+          border-radius: 2rem;
+            padding: 1rem;
+          .space{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: capitalize;
+          }
+        }
+      }
+  }

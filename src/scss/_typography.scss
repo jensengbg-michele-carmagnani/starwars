@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+* {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  margin: 0;
+  color: rgb(252, 244, 0);
+  padding: 0%;
+  font-size: 3.5rem;
+  text-transform: capitalize;
+}
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 3rem;
+  color: var(--main-text-color);
+  font-weight: bold;
+  color: #ffffff;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+h4 {
+  margin: 0;
+  padding: 0;
+  color: var(--third-text-color);
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-align: center;
+}
+span{
+  font-size: 2rem;
+  color: rgb(253, 253, 114);
+}
+
+
+input {
+  width: 90%;
+  height: 62px;
+  border: 1px solid var(--main-text-color);
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+button {
+  -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   height: 50px;
+   line-height: 50px;
+   color: #FFFFFF;
+   font-family: Verdana;
+   width: 200px;
+   font-size: 40px;
+   font-weight: 100;
+   padding: 40px;
+   background-color: #F6D03D;
+   -webkit-box-shadow: 1px 1px 20px 0 #FFFFFF;
+   -moz-box-shadow: 1px 1px 20px 0 #FFFFFF;
+   box-shadow: 1px 1px 20px 0 #FFFFFF;
+   text-shadow: 1px 1px 20px #000000;
+   border: solid #337FED 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
+
+
+button:hover {
+   border: solid #000000 2px;
+   background: #F6D03D;
+   background-image: -webkit-linear-gradient(top, #F6D03D, #FFFFFF);
+   background-image: -moz-linear-gradient(top, #F6D03D, #FFFFFF);
+   background-image: -ms-linear-gradient(top, #F6D03D, #FFFFFF);
+   background-image: -o-linear-gradient(top, #F6D03D, #FFFFFF);
+   background-image: -webkit-gradient(to bottom, #F6D03D, #FFFFFF);
+   -webkit-border-radius: 14px;
+   -moz-border-radius: 14px;
+   border-radius: 14px;
+   text-decoration: none;
+}
