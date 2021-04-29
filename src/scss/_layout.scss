@@ -59,7 +59,7 @@
     .logo {
       height: 100px;
     }
-    .search{
+    .search {
       width: 100%;
       display: flex;
       justify-content: center;
@@ -86,7 +86,7 @@
         background: #06a4c0;
         border: #06a4c0 2px solid;
         text-align: center;
-  
+
         cursor: pointer;
       }
       .search-input:focus {
@@ -140,15 +140,15 @@
         text-transform: capitalize;
       }
     }
-    .personal-movies{
+    .personal-movies {
       width: 350px;
+      height: auto;
       padding: 1rem;
       cursor: pointer;
-      border: #ffffff 1px solid;   
+      border: #ffffff 1px solid;
       border-radius: 2rem;
       background-color: rgba(95, 94, 94, 0.84);
-      .click{
-        
+      .click {
       }
     }
   }
@@ -180,8 +180,41 @@
         text-transform: capitalize;
       }
     }
-    .personal-movies{
+    .personal-movies {
       background-color: rgba(95, 94, 94, 0.84);
     }
   }
+}
+
+@media only screen and (max-width: 1000px) {
+  #all-stars {
+    .gallery {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+@media only screen and (max-width: 750px) {
+  #all-stars {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  #star-info{
+    .personal-info{
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .trait{
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  #all-stars {
+    .gallery {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
 }
