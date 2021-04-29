@@ -1,25 +1,26 @@
 <template>
-  <section id="star-info" v-if="getInfo.films">
+  <section id="star-info">
     <nav class="name">
       <h1>{{ getInfo.star.name }}</h1>
     </nav>
 
     <article class="personal-info">
       <article class="trait">
-        <p class="space"><span>Height</span>{{ getInfo.star.height }} cm</p>
-        <p class="space"><span>Mass</span>{{ getInfo.star.mass }} kg</p>
+        <h2>Trait</h2>
+        <p class="space"><span>Height</span><b>{{ getInfo.star.height }} cm</b></p>
+        <p class="space"><span>Mass</span><b>{{ getInfo.star.mass }} kg</b></p>
         <p class="space">
-          <span>Hair color</span>{{ getInfo.star.hair_color }}
+          <span>Hair color</span><b>{{ getInfo.star.hair_color }}</b>
         </p>
-        <p class="space"><span>Eye color</span>{{ getInfo.star.eye_color }}</p>
-        <p class="space"><span>Birthday</span>{{ getInfo.star.birth_year }}</p>
-        <p class="space"><span>gender</span>{{ getInfo.star.gender }}</p>
-        <p class="space"><span>gender</span>{{ getInfo.star.skin_color}}</p>
+        <p class="space"><span>Eye color</span><b>{{ getInfo.star.eye_color }}</b></p>
+        <p class="space"><span>Birthday</span><b>{{ getInfo.star.birth_year }}</b></p>
+        <p class="space"><span>gender</span><b>{{ getInfo.star.gender }}</b></p>
+        <p class="space"><span>gender</span><b>{{ getInfo.star.skin_color }}</b></p>
       </article>
-      <aside >
-        <h2>Movie</h2>
-        <!-- {{ getInfo.films[3].title }} -->
-        <Films  v-for="(film , index) in getInfo.films" :key="index" :film="film" />
+      <aside class="personal-movies" @click="getFilms(getInfo.star.films)">
+        <h2 v-if="films"><img class="click" src="../assets/click64.png" alt="">  Movies </h2>
+
+        <Films v-for="(film, index) in films" :key="index" :film="film" />
       </aside>
     </article>
   </section>
@@ -27,35 +28,39 @@
 
 <script>
 import axios from "axios";
- import Films from '../components/Films.vue'
+import Films from "../components/Films.vue";
 export default {
   name: "StarInfo",
   components: {
-     Films
+    Films,
   },
   data() {
-    return {};
+    return {
+      films: [],
+    };
   },
-  
+
+  methods: {
+    getFilms(star) {
+      console.log("star in films", star);
+      let films = [];
+      star.forEach(async (film) => {
+        let res = await axios.get(film);
+        films.push(res.data);
+      });
+      this.films = films;
+
+      console.log("Films", films);
+    },
+  },
 
   computed: {
-    getInfo () {
+    getInfo() {
       const star = this.$store.state.stars.find(
         (star) => star.name == this.$route.params.name
       );
-      
-      // console.log(star.films);
 
-      let films = []
-     
-        
-     star.films.forEach(async (film) => {
-       let res = await axios.get(film);
-          console.log('REST',res)
-          films.push(res.data);
-        });
-      
-      return { star, films };
+      return { star };
     },
   },
 };

@@ -63,41 +63,6 @@ input {
   text-align: center;
   cursor: pointer;
 }
-button {
-  -webkit-border-radius: 20px;
-   -moz-border-radius: 20px;
-   border-radius: 20px;
-   height: 50px;
-   line-height: 50px;
-   color: #FFFFFF;
-   font-family: Verdana;
-   width: 200px;
-   font-size: 40px;
-   font-weight: 100;
-   padding: 40px;
-   background-color: #F6D03D;
-   -webkit-box-shadow: 1px 1px 20px 0 #FFFFFF;
-   -moz-box-shadow: 1px 1px 20px 0 #FFFFFF;
-   box-shadow: 1px 1px 20px 0 #FFFFFF;
-   text-shadow: 1px 1px 20px #000000;
-   border: solid #337FED 1px;
-   text-decoration: none;
-   display: inline-block;
-   cursor: pointer;
-   text-align: center;
-}
 
 
-button:hover {
-   border: solid #000000 2px;
-   background: #F6D03D;
-   background-image: -webkit-linear-gradient(top, #F6D03D, #FFFFFF);
-   background-image: -moz-linear-gradient(top, #F6D03D, #FFFFFF);
-   background-image: -ms-linear-gradient(top, #F6D03D, #FFFFFF);
-   background-image: -o-linear-gradient(top, #F6D03D, #FFFFFF);
-   background-image: -webkit-gradient(to bottom, #F6D03D, #FFFFFF);
-   -webkit-border-radius: 14px;
-   -moz-border-radius: 14px;
-   border-radius: 14px;
-   text-decoration: none;
-}
+

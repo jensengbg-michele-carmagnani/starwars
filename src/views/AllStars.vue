@@ -2,8 +2,17 @@
   <main id="all-stars">
     <header class="header">
       <img class="logo" src="../assets/logo.png" alt="" />
-      <!-- <input type="text" /> -->
-      <input type="text " class="search-input">
+      <aside class="search">
+        <input
+          v-model="name"
+          type="text "
+          class="search-input"
+          placeholder="Search by name "
+        />
+        <button @click="goToStar" class="btn-search">
+          <img src="../assets/search.svg" alt="" />
+        </button>
+      </aside>
     </header>
     <section class="gallery">
       <Star v-for="(star, index) in allStars" :key="index" :star="star" />
@@ -32,12 +41,19 @@ export default {
   components: {
     Star,
   },
+
   data() {
     return {
       active: false,
+      name: "",
     };
   },
   methods: {
+    async goToStar() {
+      await this.$store.dispatch("goToStar", this.name);
+      this.name = "";
+      this.$router.push(`/searchedstar/`);
+    },
     starInfo(index) {
       this.$route.push(`/starinfo/${index}`);
     },

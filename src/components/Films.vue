@@ -1,7 +1,9 @@
 <template>
   <section id="films">
-     <b>{{film.title}}</b> 
-
+    <p class="title">
+      <span >Title</span>
+      <b class="title-name">{{ film.title }}</b>
+    </p>
   </section>
 </template>
 
@@ -14,6 +16,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
