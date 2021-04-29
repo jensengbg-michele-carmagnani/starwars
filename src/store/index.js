@@ -44,11 +44,15 @@ export default new Vuex.Store({
       ctx.commit("setStars", data);
     },
     async goToStar(ctx, name) {
-      console.log("NAME", name);
-      const res = await axios.get(`${ctx.state.API2}${name}`);
-      console.log("STAR NAME ", res.data.results[0]);
-      ctx.commit("setName", res.data.results[0]);
-      // router.push('/searchedstar')
+      try {
+         console.log('SEARCH IN STORE ',name)
+        const res = await axios.get(`${ctx.state.API2}${name}`);
+        console.log("STAR NAME ", res.data.results[0]);
+        ctx.commit("setName", res.data.results[0]);
+      } catch (error) {
+        alert(error)
+      }
+     
     },
     getFilms(ctx, star) {
       const films = []

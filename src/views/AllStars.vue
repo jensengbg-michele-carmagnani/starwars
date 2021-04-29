@@ -50,9 +50,19 @@ export default {
   },
   methods: {
     async goToStar() {
-      await this.$store.dispatch("goToStar", this.name);
-      this.name = "";
-      this.$router.push(`/searchedstar/`);
+      if (this.name == "") {
+        alert("You must fill the input");
+        return;
+      } else {
+        await this.$store.dispatch("goToStar", this.name);
+      }
+      if (this.$store.state.name || this.name === "") {
+        this.name = "";
+        this.$router.push(`/searchedstar/`);
+      } else {
+        this.name = "";
+        alert("There is no matched name");
+      }
     },
     starInfo(index) {
       this.$route.push(`/starinfo/${index}`);

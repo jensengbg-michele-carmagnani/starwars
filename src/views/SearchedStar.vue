@@ -6,26 +6,28 @@
 
     <article class="personal-info">
       <article class="trait">
-        <p class="space"><span>Height</span>{{ getInfo.height }} cm</p>
-        <p class="space"><span>Mass</span>{{ getInfo.mass }} kg</p>
+        <h2>Trait</h2>
+        <p class="space"><span>Height</span> <b>{{ getInfo.height }} cm</b></p>
+        <p class="space"><span>Mass</span><b>{{ getInfo.mass }} kg</b></p>
         <p class="space">
-          <span>Hair color</span>{{ getInfo.hair_color }}
+          <span>Hair color</span><b>{{ getInfo.hair_color }}</b>
         </p>
-        <p class="space"><span>Eye color</span>{{ getInfo.eye_color }}</p>
-        <p class="space"><span>Birthday</span>{{ getInfo.birth_year }}</p>
-        <p class="space"><span>gender</span>{{ getInfo.gender }}</p>
-        <p class="space"><span>gender</span>{{ getInfo.skin_color}}</p>
+        <p class="space"><span>Eye color</span><b>{{ getInfo.eye_color }}</b></p>
+        <p class="space"><span>Birthday</span><b>{{ getInfo.birth_year }}</b></p>
+        <p class="space"><span>gender</span><b>{{ getInfo.gender }}</b></p>
+        <p class="space"><span>gender</span><b>{{ getInfo.skin_color}}</b></p>
       </article>
-      <aside >
-        <h2>Movie</h2>
-        <!-- {{ getInfo.films[3].title }} -->
-        <Films  v-for="(film , index) in getInfo.films" :key="index" :film="film" />
+      <aside class="personal-movies" @click="getFilms(getInfo.films)">
+        <h2 ><img class="click" src="../assets/click64.png" alt="">  Movies </h2>
+
+        <Films v-for="(film, index) in films" :key="index" :film="film" />
       </aside>
     </article>
   </section>
 </template>
 
 <script>
+import axios from  'axios'
 import Films from '../components/Films.vue'
 export default {
   name: "SearchedStar",
@@ -33,7 +35,22 @@ export default {
     Films
   },
   data() {
-    return {};
+    return {
+      films:[]
+    };
+  },
+  methods: {
+    getFilms(star) {
+      console.log("star in films", star);
+      let films = [];
+      star.forEach(async (film) => {
+        let res = await axios.get(film);
+        films.push(res.data);
+      });
+      this.films = films;
+
+      console.log("Films", films);
+    },
   },
 
   computed: {
