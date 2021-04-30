@@ -224,6 +224,14 @@
   }
   #app{
       min-height: 2800px;
+      #home{
+        justify-content: center;
+        .count{
+          padding:0; 
+           
+        }
+  }
+
   }
   
 }
